@@ -1,23 +1,13 @@
-
-# 📋 Attendace App Hybrid
-
-Aplicación híbrida desarrollada con **Ionic + React** para el **registro y consulta de asistencias** de usuarios.
-La app se conecta a una API externa para autenticar usuarios y obtener datos de asistencia en tiempo real:
-
-**API utilizada:** [`https://puce.estudioika.com/api/examen.php`](https://puce.estudioika.com/api/examen.php)
-
-## 🔍 Funcionalidades
-
-* **Login** mediante usuario y contraseña (conexión a API).
-* Consulta de registros de asistencia asociados al usuario autenticado.
-* Interfaz optimizada para **navegador y dispositivos Android**.
-* Uso de **Capacitor** para integración con Android Studio.
-
----
-
-## ⚙️ Instalación y configuración
-
-```bash
+📋 App Híbrida de Asistencias
+Aplicación híbrida hecha con Ionic + React para el registro y consulta de asistencias.
+La app se conecta a una API externa para validar usuarios y mostrar en tiempo real los datos de asistencia:
+👉 API: https://puce.estudioika.com/api/examen.php
+🔍 ¿Qué hace esta app?
+Inicio de sesión con usuario y clave (validado contra la API).
+Consulta de los registros de asistencia de cada usuario que entra.
+Interfaz pensada para usarla en navegador, teléfonos Android y también en Mac.
+Uso de Capacitor para integrarla con Android Studio y con Xcode en Mac.
+⚙️ Cómo instalar y correr el proyecto
 # 1️⃣ Clonar el repositorio
 git clone https://github.com/ArielU10/attendace-app-hybrid.git
 cd attendace-app-hybrid
@@ -25,46 +15,42 @@ cd attendace-app-hybrid
 # 2️⃣ Instalar dependencias
 npm install
 
-# 3️⃣ Ejecutar en navegador (modo desarrollo)
+# 3️⃣ Correr en navegador (modo desarrollo)
 ionic serve
-```
-
----
-
-## 📱 Comandos para Android
-
-```bash
-# 1️⃣ Construir la app
+📱 Para Android (pasos típicos)
+# 1️⃣ Generar la app
 ionic build
 
-# 2️⃣ Sincronizar cambios con Android
+# 2️⃣ Sincronizar con Android
 npx cap sync android
 
 # 3️⃣ Abrir en Android Studio
 npx cap open android
 
-# 4️⃣ Ejecutar en dispositivo o emulador
+# 4️⃣ Ejecutar en el celu o emulador
 ionic capacitor run android
-```
+🍏 Para MacOS / iOS
+Si quieres correrlo en MacOS (y generar un .ipa para iPhone/iPad), necesitas tener instalado Xcode:
+# 1️⃣ Generar la app
+ionic build
 
----
+# 2️⃣ Sincronizar con iOS
+npx cap sync ios
 
-## 🌐 Migración y despliegue
+# 3️⃣ Abrir en Xcode
+npx cap open ios
 
-Si realizas cambios en el código, sigue estos pasos para reflejarlos en Android:
-
-```bash
+# 4️⃣ Ejecutar en un simulador de iPhone o en tu Mac
+ionic capacitor run ios
+⚠️ Nota: en Mac solo podrás compilar para iOS si tienes Xcode configurado. Para probarlo en Mac de escritorio basta con usar ionic serve.
+🌐 Para actualizar y desplegar
+Si cambias código, sigue este orden para que los cambios pasen al proyecto nativo:
 ionic build       # Genera la carpeta www
 npx cap copy      # Copia los archivos web al proyecto nativo
 npx cap sync      # Sincroniza plugins y configuraciones
-npx cap open android  # Abre en Android Studio para compilar y ejecutar
-```
-
----
-
-## 📂 Estructura del proyecto
-
-* `src/` → Código fuente React + Ionic
-* `public/` → Recursos estáticos
-* `android/` → Proyecto nativo Android generado por Capacitor
-
+npx cap open android  # O "npx cap open ios" en Mac
+📂 Organización del proyecto
+src/ → Código fuente (React + Ionic)
+public/ → Archivos estáticos (imágenes, íconos, etc.)
+android/ → Proyecto nativo Android creado por Capacitor
+ios/ → Proyecto nativo iOS generado por Capacitor (si corres en Mac)
