@@ -1,0 +1,200 @@
+/* =========================================================
+   LOGIN — SOLID BLUE (mobile-first, alto contraste)
+   ========================================================= */
+
+:root {
+  --primary: #1d4ed8;       /* Azul principal */
+  --primary-strong: #1e40af;
+  --accent: #0ea5e9;        /* Celeste */
+  --ok: #16a34a;
+  --danger: #dc2626;
+
+  --text: #0f172a;          /* Gris muy oscuro */
+  --text-weak: #475569;     /* Gris medio */
+  --surface: #ffffff;       /* Tarjeta */
+  --surface-2: #f1f5f9;     /* Fondo claro */
+  --border: #e2e8f0;
+
+  --shadow-1: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-2: 0 10px 30px rgba(2,6,23,.10);
+
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+  --t-fast: .15s ease;
+  --t-med: .25s ease;
+}
+
+/* Fondo */
+.login3__content {
+  --background: var(--surface-2);
+  color: var(--text);
+}
+
+.login3__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(800px 500px at 80% -10%, rgba(30,64,175,.10), transparent 60%),
+    radial-gradient(600px 400px at 0% 100%, rgba(14,165,233,.10), transparent 60%),
+    var(--surface-2);
+}
+.login3__dim { display: none; }
+
+/* Contenedor centrado */
+.login3__wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px 14px;
+}
+
+/* Logo responsive */
+.login3__brand {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  border-radius: 24px;
+  background: #fff;
+  padding: 12px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  transition: transform .25s ease;
+}
+.login3__brand:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 480px) {
+  .login3__brand {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Tarjeta */
+.login3__card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  padding: 22px 18px;
+}
+@media (min-width: 480px) {
+  .login3__card { padding: 28px 24px; }
+}
+
+/* Títulos */
+.login3__title {
+  margin: 0 0 6px;
+  font-weight: 900;
+  color: #0b1220;
+  font-size: clamp(1.2rem, 1.05rem + .6vw, 1.6rem);
+  letter-spacing: -.02em;
+}
+.login3__subtitle {
+  margin: 0 0 18px;
+  color: var(--text-weak);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* Campo de entrada */
+.login3__field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.login3__field:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(29,78,216,.12);
+}
+
+/* Iconos */
+.login3__icon {
+  font-size: 20px;
+  color: var(--primary-strong);
+  flex: 0 0 auto;
+}
+
+/* Input */
+.login3__input {
+  flex: 1 1 auto;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 8px 0;
+}
+.login3__input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Error */
+.login3__error {
+  margin: 6px 0 10px;
+  padding: 10px 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* Botón */
+.login3__cta {
+  --background: var(--primary);
+  --background-activated: var(--primary-strong);
+  --color: #fff;
+  --border-radius: 14px;
+  --padding-start: 18px;
+  --padding-end: 18px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  box-shadow: 0 8px 20px rgba(29,78,216,.18);
+}
+.login3__cta:hover { filter: saturate(1.03) brightness(1.02); }
+.login3__cta:focus { outline: 2px solid #93c5fd; outline-offset: 2px; }
+
+/* Safe areas */
+@supports(padding: max(0px)) {
+  .login3__wrap {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+}
+.login3__video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.login3__video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Opacidad */
+  z-index: -1;
+}

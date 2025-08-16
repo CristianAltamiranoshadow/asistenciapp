@@ -1,0 +1,284 @@
+/* ==== Estilos generales ==== */
+.asis__header {
+  --background: linear-gradient(90deg, #005eff, #00c3ff);
+  color: white;
+}
+
+.asis__toolbar {
+  --background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.asis__brand {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.asis__userbtn {
+  --color: white;
+}
+
+.asis__username {
+  margin: 0 4px;
+  font-weight: 500;
+}
+
+.asis__userpop {
+  --width: 240px;
+}
+
+.asis__userlist {
+  font-size: 0.9rem;
+}
+
+.asis__useritem {
+  --background: #f4f8fb;
+}
+
+.asis__userlabelTop {
+  font-weight: bold;
+}
+
+.asis__userlabelSub {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.asis__divider {
+  --background: #e5e5e5;
+}
+
+.asis__logout {
+  --color: var(--ion-color-danger);
+}
+
+/* ==== Contenido ==== */
+.asis__content {
+  --background: linear-gradient(180deg, #f0faff, #e6f4ff);
+  padding-top: 8px;
+}
+
+.asis__top {
+  margin-top: 10px;
+}
+
+.asis__panel {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 95, 255, 0.1);
+  background: white;
+}
+
+.asis__title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #005eff;
+}
+
+.asis__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.asis__logo img {
+  width: 90px;
+  height: auto;
+}
+
+.asis__welcome {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.asis__clock {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.asis__hint {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 12px 0;
+}
+
+.asis__challenge {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.asis__challengeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.asis__challengeLabel {
+  background: #005eff;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.asis__input {
+  width: 50px;
+  text-align: center;
+}
+
+.asis__btn {
+  --background: linear-gradient(90deg, #005eff, #00c3ff);
+  --border-radius: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ==== Tabla ==== */
+.asis__tableHeader {
+  background: #f7fbff;
+}
+
+.asis__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.asis__search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: 1px solid #d0e7ff;
+}
+
+.asis__searchIcon {
+  color: #005eff;
+}
+
+.asis__searchInput {
+  border: none;
+  outline: none;
+  padding: 4px;
+  font-size: 0.85rem;
+}
+
+.asis__tableWrap {
+  overflow-x: auto;
+}
+
+.asis__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.asis__table th,
+.asis__table td {
+  padding: 10px;
+  border-bottom: 1px solid #e6f4ff;
+  text-align: left;
+}
+
+.asis__table th {
+  background: #f0faff;
+  color: #005eff;
+}
+
+.asis__col-user {
+  min-width: 160px;
+}
+
+.truncate {
+  display: inline-block;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.late {
+  background: #ffeaea;
+}
+
+.ontime {
+  background: #eaffea;
+}
+
+.asis__tag {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.tag--late {
+  background: #ff4d4d;
+  color: white;
+}
+
+.tag--ok {
+  background: #00b050;
+  color: white;
+}
+
+.asis__footerInfo {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .asis__controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .asis__searchInput {
+    width: 100%;
+  }
+
+  .asis__challenge {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== Video de fondo para Asistencias ===== */
+.asis__video-bg{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;            /* por detrás de todo */
+}
+
+/* capa para oscurecer el video y mejorar legibilidad */
+.asis__video-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.35);  /* opacidad del fondo */
+}
+
+/* deja ver el video (quitamos color de fondo si lo hubiera) */
+.asis__content{
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+/* preferencia del usuario: reduce motion = pausa el video */
+@media (prefers-reduced-motion: reduce){
+  .asis__video-bg{ display: none; }
+  .asis__video-overlay{ display: none; }
+}
