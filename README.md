@@ -9,7 +9,7 @@ Interfaz pensada para usarla en navegador, teléfonos Android y también en Mac.
 Uso de Capacitor para integrarla con Android Studio y con Xcode en Mac.
 ⚙️ Cómo instalar y correr el proyecto
 # 1️⃣ Clonar el repositorio
-git clone https://github.com/ArielU10/attendace-app-hybrid.git
+git clone https://github.com/CristianAltamiranoshadow/asistenciapp.git)
 cd attendace-app-hybrid
 
 # 2️⃣ Instalar dependencias
